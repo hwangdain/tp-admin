@@ -1,0 +1,418 @@
+{% extends './base/base.html' %}
+<!-- base.html을 상속받아 오는 부분 -->
+{% load humanize %}
+
+
+<!-- base.html에 content block에 들어갈 부분을 작성 -->
+{% block content %}
+    <!-- 첫번째 줄 -->
+    <div class="row">
+        <div class="col-4">
+            <div id="wonjae" class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 공고 프로젝트</h4>
+                    <h1 class="card-text">{{ total|intcomma }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 공고 프로젝트</h4>
+                    <p class="card-text">1,123,123,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 공고 프로젝트</h4>
+                    <p class="card-text">1,123,123,000</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="wonjae-button" class="btn btn-success">눌러주세요</button>
+    </div>
+
+    <br>
+
+    <!-- 두번째 줄 -->
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h4 class="card-title">Statistics</h4>
+                        <span class="card-subtitle text-muted">Commercial networks and enterprises</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <canvas class="bar-chart-ex chartjs" data-height="450"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="table-light">
+                        <tr>
+                            <th>Project</th>
+                            <th>Client</th>
+                            <th>Users</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jerry Milton</td>
+                            <td>
+                                <div class="avatar-group">
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Lilian Nenez">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                         data-bs-placement="top" class="avatar pull-up my-0"
+                                         title="Alberto Glotzbach">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg"
+                                             alt="Avatar" height="26" width="26"/>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                            data-bs-toggle="dropdown">
+                                        <i data-feather="more-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="edit-2" class="me-50"></i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i data-feather="trash" class="me-50"></i>
+                                            <span>Delete</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 세번째 줄 -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card ">
+                <div class="card-datatable">
+                    <div class="table-responsive">
+                        <table id="gongo-table" class="table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>번호</th>
+                                <th>프로젝트명</th>
+                                <th>기관</th>
+                                <th>추정 금액</th>
+                                <th>기초 금액</th>
+                                <th>프로젝트 시작일</th>
+                                <th>프로젝트 종료일</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in sample_data %}
+                                <tr>
+                                    <td>{{ data.공고번호 }}</td>
+                                    <td>{{ data.공고명 }}</td>
+                                    <td>{{ data.발주처 }}</td>
+                                    <td>{{ data.추정가격 }}</td>
+                                    <td>{{ data.기초금액 }}</td>
+                                    <td>{{ data.입찰개시일 }}</td>
+                                    <td>{{ data.참가신청마감일 }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 네번째 줄 -->
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 공고 프로젝트</h4>
+                    <p class="card-text">1,123,123,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 공고 프로젝트</h4>
+                    <p class="card-text">1,123,123,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block page_js %}
+    <script>
+        $('#gongo-table').DataTable();
+
+        var i = 0;
+        var color = '';
+        $('#wonjae-button').on('click', function () {
+            i++;
+            if (i % 3 == 0) {
+                color = 'red';
+            } else if (i % 3 == 1) {
+                color = 'yellow';
+            } else if (i % 3 == 2) {
+                color = 'blue';
+            }
+            $('#wonjae').css('background-color', color);
+        });
+    </script>
+{% endblock page_js %}
