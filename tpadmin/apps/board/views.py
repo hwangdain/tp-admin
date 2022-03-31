@@ -8,9 +8,8 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.decorators import action
 
-from .models import Board
+from .models import Project, EstimatedBudget, ActualBudget
 from .serializers import UserSerializer
-
 
 class UserViewset(viewsets.ModelViewSet):
     queryset = User.objects.all()

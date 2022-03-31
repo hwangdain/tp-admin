@@ -1,0 +1,101 @@
+{% extends './base/base.html' %}
+<!-- base.html을 상속받아 오는 부분 -->
+{% load humanize %}
+
+
+<!-- base.html에 content block에 들어갈 부분을 작성 -->
+{% block content %}
+    <!-- 첫번째 줄 -->
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 수행 프로젝트</h4>
+                    <h1 class="card-text">{{ budget_e }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 수행 지출 금액</h4>
+                    <h1 class="card-text">{{ budget_a }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">전체 수행 예산 내역</h4>
+                    <h1 class="card-text">{{ budget_r }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 세번째 줄 -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card py-2">
+                <div class="card-datatable">
+                    <div class="table-responsive">
+                        <table id="gongo-table" class="table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>번호</th>
+                                <th>프로젝트명</th>
+                                <th>발주</th>
+                                <th>시작일자</th>
+                                <th>종료일자</th>
+                                <th>수행예산</th>
+                                <th>지출금액</th>
+                                <th>잔액</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for project in project_list %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ project.name }}</td>
+                                    <td>{{ project.client }}</td>
+                                    <td>{{ project.start_date }}</td>
+                                    <td>{{ project.end_date }}</td>
+                                    <td>{{ project.estimated_budget_sum }}</td>
+                                    <td>{{ project.actual_bugdet_sum }}</td>
+                                    <td>{{ project.remain_budget }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button class="btn btn-dark m-auto">프로젝트 등록</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 네번째 줄 -->
+{% endblock content %}
+
+
+{% block page_js %}
+    <script>
+        $('#gongo-table').DataTable();
+
+        var i = 0;
+        var color = '';
+        $('#wonjae-button').on('click', function () {
+            i++;
+            if (i % 3 == 0) {
+                color = 'red';
+            } else if (i % 3 == 1) {
+                color = 'yellow';
+            } else if (i % 3 == 2) {
+                color = 'blue';
+            }
+            $('#wonjae').css('background-color', color);
+        });
+    </script>
+{% endblock page_js %}
